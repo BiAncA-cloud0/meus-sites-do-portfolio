@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site de Receitas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fff8f0;
+      color: #333;
+    }
+    header {
+      background-color: #ff914d;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      padding: 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .receita {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    .receita h2 {
+      margin-top: 0;
+    }
+    button {
+      background-color: #ff914d;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e06e1e;
+    }
+    .ingredientes, .modo-preparo {
+      display: none;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍳 Site de Receitas</h1>
+    <p>Receitas simples e deliciosas</p>
+  </header>
+  <main>
+    <div class="receita">
+      <h2>Bolo de Chocolate</h2>
+      <p>Uma receita fácil de bolo de chocolate fofinho.</p>
+      <button onclick="mostrar('chocolate')">Ver Receita</button>
+      <div id="chocolate" class="detalhes">
+        <div class="ingredientes">
+          <h3>Ingredientes:</h3>
+          <ul>
+            <li>2 xícaras de farinha de trigo</li>
+            <li>1 xícara de açúcar</li>
+            <li>1 xícara de chocolate em pó</li>
+            <li>1/2 xícara de óleo</li>
+            <li>1 xícara de leite</li>
+            <li>2 ovos</li>
+            <li>1 colher de fermento</li>
+          </ul>
+        </div>
+        <div class="modo-preparo">
+          <h3>Modo de Preparo:</h3>
+          <ol>
+            <li>Misture os ingredientes secos.</li>
+            <li>Adicione os líquidos e misture bem.</li>
+            <li>Leve ao forno pré-aquecido a 180ºC por 35 minutos.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Você pode adicionar mais receitas copiando a estrutura acima -->
+
+  </main>
+
+  <script>
+    function mostrar(id) {
+      const detalhes = document.getElementById(id);
+      const ingredientes = detalhes.querySelector('.ingredientes');
+      const modo = detalhes.querySelector('.modo-preparo');
+
+      ingredientes.style.display = ingredientes.style.display === 'block' ? 'none' : 'block';
+      modo.style.display = modo.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
